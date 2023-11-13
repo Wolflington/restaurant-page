@@ -1,3 +1,5 @@
+//START OF MENU
+
 export function menuTemplate(header, topPage, homeButton, menuButton, reserveButton, headerLogo) {
     //Checks whether if active class is in the DOM element 
     const existingMenu = document.querySelector('.active');
