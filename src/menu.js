@@ -1,5 +1,3 @@
-//START OF MENU
-
 export function menuTemplate(header, topPage, homeButton, menuButton, reserveButton, headerLogo) {
     //Checks whether if active class is in the DOM element 
     const existingMenu = document.querySelector('.active');
@@ -39,19 +37,19 @@ export function menuContent(topPage) {
      pastaItems.innerHTML = `<h4>Pasta</h4>`;
      pastaItems.style.color = `#000000`;
      pastaItems.appendChild(
-        createMenuItems("Spaghetti Carbonara", "15.00")
+        createMenuItems("Spaghetti Carbonara", "$15.00")
      );
      pastaItems.appendChild(
-        createMenuItems("Fettuccine Alfredo", "20.00")
+        createMenuItems("Fettuccine Alfredo", "$20.00")
      );
      pastaItems.appendChild(
-        createMenuItems("Linguine alle Vongole", "25.00")
+        createMenuItems("Linguine alle Vongole", "$25.00")
      );
      pastaItems.appendChild(
-        createMenuItems("Lasagna", "15.00")
+        createMenuItems("Lasagna", "$15.00")
      );
      pastaItems.appendChild(
-        createMenuItems("Penne alla Arrabbiata", "20.00")
+        createMenuItems("Penne alla Arrabbiata", "$20.00")
      );
 
         let pizzaItems = document.createElement('div');
