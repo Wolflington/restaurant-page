@@ -1,46 +1,6 @@
-const mainContent = document.querySelector('#content');
-let topPage = document.createElement('div');
-topPage.classList.add('top-page');
-
-//-------- HEADER START --------
-
-let header = document.createElement('header'); //Header of the page
-
-    //Div for logo text
-    let headerLogo = document.createElement('div');
-    headerLogo.classList.add('header-logo');
-    headerLogo.textContent = 'Pastaciutta Trattoria'
-
-    let mainMenu = document.createElement('div'); //Div for buttons
-    mainMenu.classList.add('main-menu');
-
-        //Buttons for header
-        let homeButton = document.createElement('button');
-        homeButton.classList.add('homeBtn');
-
-        let menuButton = document.createElement('button');
-        menuButton.classList.add('menuBtn');
-
-        let reserveButton = document.createElement('button');
-        reserveButton.classList.add('reserveBtn');
-
-        homeButton.textContent = 'Home';
-        menuButton.textContent = 'Menu';
-        reserveButton.textContent = 'Make Reservations';
-
-//Append this portion to header
-header.append(headerLogo);
-header.append(mainMenu);
-mainMenu.append(homeButton);
-mainMenu.append(menuButton);
-mainMenu.append(reserveButton);
-
-//-------- HEADER END --------
-
-
 //START OF MENU
 
-export function menuTemplate() {
+export function menuTemplate(header, topPage, homeButton, menuButton, reserveButton, headerLogo) {
     //Checks whether if active class is in the DOM element 
     const existingMenu = document.querySelector('.active');
     if (existingMenu) {
@@ -69,7 +29,7 @@ export function menuTemplate() {
     headerLogo.style.color = '#000000';
 }
 
-export function menuContent() {
+export function menuContent(topPage) {
     //-------- MENU ITEMS START --------
     let menuContainer = document.createElement('div');
     menuContainer.classList.add('menu-container');

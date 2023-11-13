@@ -71,13 +71,15 @@ mainContent.append(topPage);
 
 //Header Menu button
 menuButton.addEventListener('click', () => {
-    menuTemplate();
-    menuContent();
+    console.log('I am clicked!');
+    menuTemplate(header, topPage, homeButton, menuButton, reserveButton, headerLogo);
+    menuContent(topPage);
     createMenuItems();
 });
 
 //Top Page Menu button
 topButton.addEventListener('click', () => {
+    console.log('I am clicked!');
     menuTemplate();
     menuContent();
     createMenuItems();
