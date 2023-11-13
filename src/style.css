@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Italiana&family=Lato&family=Playfair+Display&family=Roboto&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+#content {
+    background: url(./assets/dim-nerfee-mirandilla-o1EDsUFmuXQ-unsplash.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow-y: auto;
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    height: 8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 3.5rem;
+    background-color: #35323269;
+    z-index: 2;
+}
+
+.header-logo {
+    font-size: 3.5rem;
+    font-family: 'Great Vibes', cursive;
+    color: #fefefe;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0.2rem;
+}
+
+.main-menu {
+    display: flex;
+    gap: 1.8rem;
+}
+
+button {
+    appearance: none;
+    border-style: none;
+    color: #fefefe;
+    background-color: transparent;
+    border: 2px solid transparent;
+    font-size: 1.8rem;
+    cursor: pointer;
+    font-family: 'Italiana', sans-serif;
+    font-weight: 500;
+    
+}
+
+button:hover {
+    border-bottom: 2px solid #F3A83C;
+}
+
+.top-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 3rem;
+    font-family: 'Great Vibes', cursive;
+    font-size: 10rem;
+    color: white;
+}
+
+.top-page > p {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.6rem;
+}
+
+.top-text {
+    font-size: 4rem;
+    font-family: 'Italiana', sans-serif;
+}
+
+.logo {
+    background-image: url(./assets/white-pastaciutta-trattoria-high-resolution-logo-transparent.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 22.9rem;
+    width: 56rem;
+}
+
+.top-button > button {
+    font-size: 3rem;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.menu-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    width: 100vw;
+    gap: 4rem;
+    padding: 4rem 0;
+}
+
+.menu-items {
+    display: flex;
+    justify-content: space-between;
+    gap: 15rem;
+    font-size: 1.5rem;
+    border-bottom: 1px solid rgba(194, 194, 194, 0.829);
+}
+
+h4 {
+    display: flex;
+    justify-content: center;
+}
+
+.pasta-items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+
+.pizza-items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.drink-items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+}
