@@ -2,13 +2,8 @@
 
 export function menuTemplate(header, topPage, homeButton, menuButton, reserveButton, headerLogo) {
     //Checks whether if active class is in the DOM element 
-    const existingMenu = document.querySelector('.active');
-    if (existingMenu) {
-        existingMenu.classList.toggle('active');
-    }
     
-    topPage.classList.toggle('active');
-    header.classList.toggle('active');
+    //Toggles active class
     topPage.style.cssText = `margin: 0;
     background-color: #fefefe;
     height: 100vh;
@@ -31,6 +26,8 @@ export function menuTemplate(header, topPage, homeButton, menuButton, reserveBut
 
 export function menuContent(topPage) {
     //-------- MENU ITEMS START --------
+
+    //Append all items on the menu page
     let menuContainer = document.createElement('div');
     menuContainer.classList.add('menu-container');
 
@@ -101,6 +98,8 @@ export function menuContent(topPage) {
 }
 
 export function createMenuItems(name, price) {
+   //Function that automatically append the items and its price implicitly
+
     const menuItems = document.createElement("div");
     menuItems.classList.add("menu-items");
   

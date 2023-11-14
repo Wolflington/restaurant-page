@@ -1,10 +1,13 @@
 import _ from 'lodash';
 import './style.css';
 import { menuTemplate, menuContent, createMenuItems } from './menu';
+import loadHome from './home';
 
 const mainContent = document.querySelector('#content');
 
 //-------- HEADER START --------
+
+//Remove these hard codes and call the functions that create the headers and top page
 
 let header = document.createElement('header'); //Header of the page
 
@@ -51,16 +54,9 @@ topPage.classList.add('top-page');
     let slogan = document.createElement('p');
     slogan.textContent = 'Savor the Soul of Italy';
 
-    let topButton = document.createElement('div');
-    topButton.classList.add('top-button');
-        let topPageBtn = document.createElement('button');
-        topPageBtn.textContent = 'Menu';
-
 //Append this section to top-page
 topPage.append(logo);
 topPage.append(slogan);
-topPage.append(topButton);
-topButton.append(topPageBtn);
 
 //-------- TOP PAGE END --------
 
@@ -68,6 +64,24 @@ mainContent.append(header);
 mainContent.append(topPage);
 
 //Event Listeners for changing tabs
+function changeTabs(button) {
+    const buttons = document.querySelectorAll("button");
+    buttons.forEach((button) => {
+        if (button != this) {
+            button.classList.toggle('active');
+        }
+    });
+
+    //Add active class to buttons
+    button.classList.toggle('active');
+}
+
+//Home button
+
+homeButton.addEventListener('click', () => {
+    console.log('I am clicked!');
+    loadHome();
+});
 
 //Header Menu button
 menuButton.addEventListener('click', () => {
@@ -77,10 +91,8 @@ menuButton.addEventListener('click', () => {
     createMenuItems();
 });
 
-//Top Page Menu button
-topButton.addEventListener('click', () => {
-    console.log('I am clicked!');
-    menuTemplate();
-    menuContent();
-    createMenuItems();
-});
+
+//Create a function that initialize websites. Call the uncalled functions inside of initializeWebsite()
+function initializeWebsite() {
+    
+}
