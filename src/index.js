@@ -21,13 +21,8 @@ let header = document.createElement('header'); //Header of the page
 
         //Buttons for header
         let homeButton = document.createElement('button');
-        homeButton.classList.add('homeBtn');
-
         let menuButton = document.createElement('button');
-        menuButton.classList.add('menuBtn');
-
         let reserveButton = document.createElement('button');
-        reserveButton.classList.add('reserveBtn');
 
         homeButton.textContent = 'Home';
         menuButton.textContent = 'Menu';
@@ -60,8 +55,6 @@ topPage.append(slogan);
 
 //-------- TOP PAGE END --------
 
-mainContent.append(header);
-mainContent.append(topPage);
 
 //Event Listeners for changing tabs
 function changeTabs(button) {
@@ -91,8 +84,12 @@ menuButton.addEventListener('click', () => {
     createMenuItems();
 });
 
-
 //Create a function that initialize websites. Call the uncalled functions inside of initializeWebsite()
 function initializeWebsite() {
-    
+    mainContent.append(header);
+    mainContent.append(topPage);
+
+    changeTabs()
 }
+
+initializeWebsite();
