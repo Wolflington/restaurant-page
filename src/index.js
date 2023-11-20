@@ -1,7 +1,8 @@
 import _ from 'lodash';
 import './style.css';
-import { menuTemplate, menuContent, createMenuItems } from './menu';
+import { template, menuContent, createMenuItems } from './menu';
 import loadHome from './home';
+import { createContacts } from './reservations';
 
 const mainContent = document.querySelector('#content');
 
@@ -51,6 +52,7 @@ topPage.classList.add('top-page');
     let logo = document.createElement('div');
     logo.classList.add('logo');
     let slogan = document.createElement('p');
+    slogan.classList.add('slogan');
     slogan.textContent = 'Savor the Soul of Italy';
 //Append this section to top-page
 topPage.append(logo);
@@ -58,10 +60,6 @@ topPage.append(slogan);
 
 
 //-------- TOP PAGE END --------
-
-
-mainContent.append(header);
-mainContent.append(topPage);
 
 //Event Listeners for changing tabs
 function changeTabs(currentButton) {
@@ -80,7 +78,16 @@ function changeTabs(currentButton) {
 
 //Create a function that initialize websites. Call the uncalled functions inside of initializeWebsite()
 function initializeWebsite() {
+    //Appends the content
+    mainContent.append(header);
+    console.log(header)
+    mainContent.append(topPage);
+    console.log(topPage);
+
+    changeTabs(homeButton) //Changes the active button upon initialization
+
     //Event listeners for tab-switching
+
     //Home button
     homeButton.addEventListener('click', () => {
         console.log('I am clicked from home button!');
@@ -91,7 +98,7 @@ function initializeWebsite() {
     menuButton.addEventListener('click', () => {
         console.log('I am clicked from menu button!');
         changeTabs(menuButton);
-        menuTemplate(header, topPage, homeButton, menuButton, reserveButton, headerLogo);
+        template(header, topPage, homeButton, menuButton, reserveButton, headerLogo);
         menuContent(topPage);
         createMenuItems();
     });
@@ -99,12 +106,10 @@ function initializeWebsite() {
     reserveButton.addEventListener('click', () => {
         console.log('I am clicked from reserve button!');
         changeTabs(reserveButton);
+        template(header, topPage, homeButton, menuButton, reserveButton, headerLogo);
+        createContacts();
     });
-
-    mainContent.append(header);
-    mainContent.append(topPage);
-
-    changeTabs(homeButton) //Changes the active button upon initialization
 }
 
 initializeWebsite();
+export default changeTabs;
