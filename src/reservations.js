@@ -12,71 +12,52 @@ export function createContacts() {
     let contactContainer = document.createElement('div');
     contactContainer.classList.add('contact-container');
 
-    //Reservation Form
-
+    // Create form element
     let reservationForm = document.createElement('form');
     reservationForm.id = 'reservationForm';
 
-    // Create date input
-    let dateLabel = document.createElement('label');
-    dateLabel.textContent = 'Date:';
-    let dateInput = document.createElement('input');
-    dateInput.type = 'date';
-    dateInput.name = 'date';
-    dateInput.required = true;
-    dateLabel.appendChild(dateInput);
+    // Define form elements data
+    const formElements = [
+        { label: 'Date:', type: 'date', name: 'date', required: true },
+        { label: 'Time:', type: 'time', name: 'time', required: true },
+        { label: 'Number of Guests:', type: 'number', name: 'guests', min: '1', required: true },
+        { label: 'Name:', type: 'text', name: 'name', required: true },
+        { label: 'Email:', type: 'email', name: 'email', required: true }
+    ];
 
-    // Create time input
-    let timeLabel = document.createElement('label');
-    timeLabel.textContent = 'Time:';
-    let timeInput = document.createElement('input');
-    timeInput.type = 'time';
-    timeInput.name = 'time';
-    timeInput.required = true;
-    timeLabel.appendChild(timeInput);
+    // Loop through form elements data and create corresponding HTML elements
+    formElements.forEach(element => {
+        let container = document.createElement('div');
 
-    // Create number of guests input
-    let guestsLabel = document.createElement('label');
-    guestsLabel.textContent = 'Number of Guests:';
-    let guestsInput = document.createElement('input');
-    guestsInput.type = 'number';
-    guestsInput.name = 'guests';
-    guestsInput.min = '1';
-    guestsInput.required = true;
-    guestsLabel.appendChild(guestsInput);
+        let label = document.createElement('label');
+        label.textContent = element.label;
 
-    // Create name input
-    let nameLabel = document.createElement('label');
-    nameLabel.textContent = 'Name:';
-    let nameInput = document.createElement('input');
-    nameInput.type = 'text';
-    nameInput.name = 'name';
-    nameInput.required = true;
-    nameLabel.appendChild(nameInput);
+        let input = document.createElement('input');
+        input.type = element.type;
+        input.name = element.name;
+        if (element.hasOwnProperty('min')) {
+            input.min = element.min;
+        }
+        if (element.hasOwnProperty('required')) {
+            input.required = element.required;
+        }
 
-    // Create email input
-    let emailLabel = document.createElement('label');
-    emailLabel.textContent = 'Email:';
-    let emailInput = document.createElement('input');
-    emailInput.type = 'email';
-    emailInput.name = 'email';
-    emailInput.required = true;
-    emailLabel.appendChild(emailInput);
+        container.appendChild(label);
+        container.appendChild(input);
+
+        // Append the container to the form
+        reservationForm.appendChild(container);
+    });
 
     // Create submit button
     let submitButton = document.createElement('button');
     submitButton.type = 'button';
-    submitButton.textContent = 'Submit Reservation';
-    submitButton.addEventListener('click',  () => {
+    submitButton.textContent = 'Reserve';
+    submitButton.addEventListener('click', () => {
         console.log('I am clicked from submit button!');
     });
 
-    // Append form elements to the form
-    reservationForm.appendChild(dateLabel);
-    reservationForm.appendChild(timeLabel);
-    reservationForm.appendChild(guestsLabel);
-    reservationForm.appendChild(nameLabel);
-    reservationForm.appendChild(emailLabel);
+    // Append the submit button to the form
     reservationForm.appendChild(submitButton);
 
     let contactNum = document.createElement('div');
