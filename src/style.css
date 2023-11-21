@@ -46,7 +46,7 @@ header {
     gap: 1.8rem;
 }
 
-button {
+.main-menu > button {
     appearance: none;
     border-style: none;
     color: #fefefe;
@@ -59,7 +59,7 @@ button {
     
 }
 
-button:hover {
+.main-menu > button:hover {
     border-bottom: 2px solid #F3A83C;
 }
 
@@ -156,7 +156,7 @@ h4 {
 
 .contact-box > p {
     font-family: 'Playfair Display', serif;
-    margin-top: 5rem;
+    margin-top: 3rem;
     font-size: 3.5rem;
     padding: 0.2rem;
 }
@@ -165,11 +165,54 @@ h4 {
     font-family: 'Roboto', 'Lato', sans-serif;
     display: flex;
     padding: 2rem;
-    flex-direction: column;
-    justify-content: center;
-    /* align-items: center; */
+    /* flex-direction: column;
+    justify-content: center; */
+    align-items: center;
     color: #000000;
-    background-color: #35323269;
+    background-color: #33333391;
     width: 50vw;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    border-radius: 20px;
+}
+
+form {
+    max-width: 400px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+input, #submitBtn {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+button, #submitBtn {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+#submitBtn:hover {
+    background-color: #45a049;
 }
