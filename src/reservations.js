@@ -107,11 +107,16 @@ export function createContacts() {
         commentMsg.textContent = "Message us!";
 
         let commentBox = document.createElement('textarea');
-        commentBox.rows = 11;
-        commentBox.cols = 100;
+        commentBox.rows = 4;
+        commentBox.cols = 80;
+
+        let submitComment = document.createElement('button');
+        submitComment.classList.add('submit-comment');
+        submitComment.textContent = 'Submit';
 
         comments.append(commentMsg);
         comments.append(commentBox);
+        comments.append(submitComment);
 
     //Append elements into website
     topPage.appendChild(contactBox);
