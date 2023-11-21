@@ -51,6 +51,7 @@ export function createContacts() {
 
     // Create submit button
     let submitButton = document.createElement('button');
+    submitButton.setAttribute('id', 'submitBtn');
     submitButton.type = 'button';
     submitButton.textContent = 'Reserve';
     submitButton.addEventListener('click', () => {
