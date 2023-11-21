@@ -1,3 +1,7 @@
+import phoneIcon from './assets/phone.png';
+import timeIcon from './assets/time.png';
+import pinIcon from './assets/pin.png';
+
 export function createContacts() {
     let topPage = document.querySelector('.top-page');
     topPage.innerHTML = ''
@@ -58,16 +62,65 @@ export function createContacts() {
         console.log('I am clicked from submit button!');
     });
 
-    // Append the submit button to the form
     reservationForm.appendChild(submitButton);
 
+    //Details section
+    let details = document.createElement('div');
+    details.classList.add('details');
+    
     let contactNum = document.createElement('div');
-    contactNum.innerHTML = `(02) 789-9999`
+    contactNum.classList.add('contact-num');
+        let contactIcon = document.createElement('img');
+        contactIcon.src = phoneIcon;
 
-    // topPage.appendChild(map);
+        let contactInfo = document.createElement('p');
+        contactInfo.textContent = '(02) 789-9999';
+
+        contactNum.append(contactIcon);
+        contactNum.append(contactInfo);
+
+    let location = document.createElement('div');
+    location.classList.add('location');
+        let locationIcon = document.createElement('img');
+        locationIcon.src = pinIcon;
+
+        let locationInfo = document.createElement('p');
+        locationInfo.textContent = '123 Via Sapore del Sole, Quartiere BuonGusto, MI';
+
+        location.append(locationIcon);
+        location.append(locationInfo);
+
+    let schedule = document.createElement('div');
+    schedule.classList.add('schedule');
+        let scheduleIcon = document.createElement('img');
+        scheduleIcon.src = timeIcon;
+
+        let scheduleInfo = document.createElement('p');
+        scheduleInfo.textContent = 'Monday to Sunday: 10:00 AM to 9:00 PM';
+
+        schedule.append(scheduleIcon);
+        schedule.append(scheduleInfo);
+    
+    let comments = document.createElement('div');
+    comments.classList.add('comments');
+        let commentMsg = document.createElement('p');
+        commentMsg.textContent = "Message us!";
+
+        let commentBox = document.createElement('textarea');
+        commentBox.rows = 11;
+        commentBox.cols = 100;
+
+        comments.append(commentMsg);
+        comments.append(commentBox);
+
+    //Append elements into website
     topPage.appendChild(contactBox);
     contactBox.appendChild(p);
     contactBox.appendChild(contactContainer);
     contactContainer.appendChild(reservationForm);
-    // contactContainer.appendChild(contactNum);
+    contactContainer.appendChild(details);
+    details.appendChild(contactNum);
+    details.appendChild(location);
+    details.appendChild(schedule);
+    details.appendChild(comments);
 }
