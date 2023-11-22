@@ -1,7 +1,10 @@
 import _ from 'lodash';
 import './style.css';
+import bgPic from './assets/dim-nerfee-mirandilla-o1EDsUFmuXQ-unsplash.png';
+import logoPic from './assets/white-pastaciutta-trattoria-high-resolution-logo-transparent.png';
 import { template, menuContent, createMenuItems } from './menu';
 import loadHome from './home';
+import { createHeader, createTopPage } from './home';
 import { createContacts } from './reservations';
 
 const mainContent = document.querySelector('#content');
@@ -9,7 +12,7 @@ const mainContent = document.querySelector('#content');
 //-------- HEADER START --------
 
 
-//Remove these hard codes and call the functions that create the headers and top page
+//Remove these global variables and call the functions that create the headers and top page
 
 let header = document.createElement('header'); //Header of the page
     //Div for logo text
@@ -49,8 +52,10 @@ mainMenu.append(reserveButton);
 
 let topPage = document.createElement('div');
 topPage.classList.add('top-page');
-    let logo = document.createElement('div');
+    let logo = document.createElement('img');
     logo.classList.add('logo');
+    logo.src = logoPic;
+
     let slogan = document.createElement('p');
     slogan.classList.add('slogan');
     slogan.textContent = 'Savor the Soul of Italy';
@@ -80,9 +85,7 @@ function changeTabs(currentButton) {
 function initializeWebsite() {
     //Appends the content
     mainContent.append(header);
-    console.log(header)
     mainContent.append(topPage);
-    console.log(topPage);
 
     changeTabs(homeButton) //Changes the active button upon initialization
 
@@ -92,7 +95,9 @@ function initializeWebsite() {
     homeButton.addEventListener('click', () => {
         console.log('I am clicked from home button!');
         changeTabs(homeButton);
-        loadHome();
+        // loadHome();
+        createHeader();
+        createTopPage();
     });
     //Menu button
     menuButton.addEventListener('click', () => {
@@ -111,5 +116,8 @@ function initializeWebsite() {
     });
 }
 
+function updateContent() {
+
+}
+
 initializeWebsite();
-export default changeTabs;
