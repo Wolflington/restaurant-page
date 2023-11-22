@@ -3,7 +3,7 @@ import './style.css';
 import bgPic from './assets/dim-nerfee-mirandilla-o1EDsUFmuXQ-unsplash.png';
 import logoPic from './assets/white-pastaciutta-trattoria-high-resolution-logo-transparent.png';
 import { template, menuContent, createMenuItems } from './menu';
-import loadHome from './home';
+// import loadHome from './home';
 import { createHeader, createTopPage } from './home';
 import { createContacts } from './reservations';
 
@@ -11,8 +11,6 @@ const mainContent = document.querySelector('#content');
 
 //-------- HEADER START --------
 
-
-//Remove these global variables and call the functions that create the headers and top page
 
 let header = document.createElement('header'); //Header of the page
     //Div for logo text
@@ -68,7 +66,6 @@ topPage.append(slogan);
 
 //Event Listeners for changing tabs
 function changeTabs(currentButton) {
-    console.log('changeTabs called with:', currentButton);
     const mainMenu = document.querySelector('.main-menu');
     const buttons = mainMenu.querySelectorAll('button');
     buttons.forEach((btn) => {
@@ -77,7 +74,6 @@ function changeTabs(currentButton) {
 
     if (currentButton) {
         currentButton.classList.add('active');
-        console.log('Added active class to:', currentButton);
     }
 }
 
@@ -93,15 +89,12 @@ function initializeWebsite() {
 
     //Home button
     homeButton.addEventListener('click', () => {
-        console.log('I am clicked from home button!');
         changeTabs(homeButton);
-        // loadHome();
         createHeader();
         createTopPage();
     });
     //Menu button
     menuButton.addEventListener('click', () => {
-        console.log('I am clicked from menu button!');
         changeTabs(menuButton);
         template(header, topPage, homeButton, menuButton, reserveButton, headerLogo);
         menuContent(topPage);
@@ -109,15 +102,10 @@ function initializeWebsite() {
     });
     //Reserve Button
     reserveButton.addEventListener('click', () => {
-        console.log('I am clicked from reserve button!');
         changeTabs(reserveButton);
         template(header, topPage, homeButton, menuButton, reserveButton, headerLogo);
         createContacts();
     });
-}
-
-function updateContent() {
-
 }
 
 initializeWebsite();

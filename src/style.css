@@ -85,7 +85,6 @@ header {
 }
 
 .logo {
-    /* background-image: url(./assets/white-pastaciutta-trattoria-high-resolution-logo-transparent.png); */
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 22.9rem;
@@ -171,6 +170,7 @@ h4 {
     border: 2px solid #F3A83C;
     border-radius: 20px;
     gap: 2rem;
+    margin-bottom: 3rem;
 }
 
 form {
@@ -242,6 +242,7 @@ input:focus {
 }
 
 textarea {
+    display: flex;
     padding: 10px;
     font-size: 14px;
     width: 100%;

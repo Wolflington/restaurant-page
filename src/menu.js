@@ -1,4 +1,3 @@
-//START OF MENU
 export function template(header, topPage, homeButton, menuButton, reserveButton, headerLogo) {
    //Parameters will be passed on index.js to target the respective DOM elements
 
@@ -8,23 +7,15 @@ export function template(header, topPage, homeButton, menuButton, reserveButton,
    height: calc(100vh - ${header.offsetHeight}px);
    display: block;
 `;
-   topPage.innerHTML = ''; //Removes content in top-page
+   topPage.innerHTML = '';
 
    //Change color of header
    header.style.cssText = `
    border-bottom: 2px solid #F3A83C;
    `;
-   // //Change font color of buttons
-   // homeButton.style.color = `#000000`;
-   // menuButton.style.color = `#000000`;
-   // reserveButton.style.color = `#000000`;
-
-   //Change font color of logo
-   // headerLogo.style.color = '#000000';
 }
 
 export function menuContent(topPage) {
-   //-------- MENU ITEMS START --------
    //Append all items on the menu page
    let menuContainer = document.createElement('div');
    menuContainer.classList.add('menu-container');
