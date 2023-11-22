@@ -27,7 +27,7 @@ header {
     align-items: center;
     padding: 1.5rem 3.5rem;
     background-color: #35323269;
-    /* border-bottom: 2px solid transparent; */
+    border-bottom: 2px solid transparent;
 }
 
 .header-logo {
@@ -85,7 +85,7 @@ header {
 }
 
 .logo {
-    background-image: url(./assets/white-pastaciutta-trattoria-high-resolution-logo-transparent.png);
+    /* background-image: url(./assets/white-pastaciutta-trattoria-high-resolution-logo-transparent.png); */
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 22.9rem;
